@@ -1,0 +1,46 @@
+o segredo e pivot, atrás do pivot todo mundo e maior q ele, anterior a ele menor.
+
+pivot recebe o valor, o endereço dele não importa.
+
+quando achar um valor maior que o pivot, o laço para, e começar a ler o vetor de tráz para frente
+
+quando achar o valor menor que o pivot, troca-os
+
+faz o fim-- , faz o inicio ++
+
+IMPORTANTE tomar cuidado para o pivot não ultrapassar ele msm, atravessar o vetor.
+
+
+
+exemplo de codigo tem bug
+
+pivot := vet[(inicio+fim dev 2)];
+
+while(inicio < fim) do
+begin
+	while(vet[inicio]<pivot) do inicio:=inicio+1; //percorrer ate achar o maior
+	while(vet[fim]>pivot) do fim:=fim-1;	//percorrer ate achar o menor
+	if(inicio <= fim) then
+	begin
+		troca-lhos
+		inicio++;
+		fim--;
+	end;
+end; 
+
+
+melhorado
+
+pivot := vet[(inicio+fim dev 2)];
+
+while(inicio < fim) do
+begin
+	while(vet[inicio]<pivot) do inicio:=inicio+1; //percorrer ate achar o maior
+	while(vet[fim]>pivot) do fim:=fim-1;	//percorrer ate achar o menor
+	if(inicio <= fim) then
+	begin
+		troca-lhos
+		if(vet[inicio] <> pivot) then inicio++;
+		if(vet[fim] <> pivot) then fim--;
+	end;
+end; 

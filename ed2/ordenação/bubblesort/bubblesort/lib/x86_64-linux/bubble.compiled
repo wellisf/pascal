@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1397983219"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -vewnhi &quot;-Fi/home/alunos/Área de Trabalho/backup/trabalho/bubblesort/lib/x86_64-linux&quot; &quot;-Fu/home/alunos/Área de Trabalho/backup/trabalho/bubblesort/&quot; &quot;-FU/home/alunos/Área de Trabalho/backup/trabalho/bubblesort/lib/x86_64-linux/&quot; -l bubble.lpr"/>
+</CONFIG>

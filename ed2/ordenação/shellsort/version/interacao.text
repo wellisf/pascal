@@ -1,0 +1,32 @@
+Interações com o metodo convencional(gap começando com a metade do vetor)
+vetor[10.000] = 1.080.069 interações
+vetor[1.000] = 34.651 interações
+Vetor[100] = 525 interações
+Vetor[10] = 7 interações
+
+Interações com o metodo convencional(gap começando com o tamanho do vetor)
+vetor[10.000] = 2.146.238 interações
+vetor[1.000] = 69.074 interações
+Vetor[100] = 924 interações
+Vetor[10] = 13 interações
+
+Interações com o metodo Knuth(gap*3+1)
+vetor[10.000] = 144.339 interações
+vetor[1.000] = 8.722 interações
+Vetor[100] = 453 interações
+Vetor[10] = 13 interações
+
+
+
+
+246
+8
+8
+3
+8
+8
+8
+8
+8
+8
+8

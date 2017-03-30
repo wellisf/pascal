@@ -1,0 +1,42 @@
+program bubble;
+
+type
+	Tdado = integer;
+	Tarq = file of Tdado;
+
+procedure bubbleSort();
+var
+	arq : Tarq;
+	temp : Tdado;
+	i,j : integer;	
+	aux1, aux: integer;
+
+begin
+	assign(arq,'arq.dat');
+	rewrite(arq);
+		for i:=1 to filesize(arq) do
+		begin
+			for j:=1 to filesize(arq)-1 do
+				begin
+					seek(arq,i);
+					read(arq,aux);
+					seek(arq,i+1);
+					read(arq,aux1);
+					if( aux > aux1) then
+					begin
+						temp := aux;
+						aux := aux1;
+						seek(arq,i);
+						writeln(arq, aux);
+						aux1 := temp; 
+						seek(arq,i+1);
+						writeln(arq, aux1);
+					end;
+			end;	
+		end;					
+	close(arq);
+end;
+
+begin
+
+end.

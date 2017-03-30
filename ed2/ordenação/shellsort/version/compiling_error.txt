@@ -1,0 +1,1 @@
+gcc: error: /home/wellintgon/Dropbox/Faculdade/computacao/linguagem/pascal/estrutura de dados II/metodos de ordenação/shellsort/version/shellv03.pas: Pascal compiler not installed on this system
