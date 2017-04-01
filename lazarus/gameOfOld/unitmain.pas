@@ -1,0 +1,578 @@
+unit unitMain;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  ExtCtrls;
+
+type
+
+  { Tmain }
+
+  Tmain = class(TForm)
+    btnPos11: TButton;
+    btnPos12: TButton;
+    btnPos13: TButton;
+    btnPos21: TButton;
+    btnPos22: TButton;
+    btnPos23: TButton;
+    btnPos31: TButton;
+    btnPos32: TButton;
+    btnPos33: TButton;
+    btnReset: TButton;
+    btnNewGame: TButton;
+    btnRanking: TButton;
+    btnRankingClosed: TButton;
+    lblSecondView: TLabel;
+    lblRankingView: TLabel;
+    lblSecond: TLabel;
+    lblRanking: TLabel;
+    lbldeveloper: TLabel;
+    lblWinner: TLabel;
+    lbtTurnToView: TLabel;
+    lbtTurn: TLabel;
+    lblTitle: TLabel;
+    procedure btnNewGameClick(Sender: TObject);
+    procedure btnRankingClick(Sender: TObject);
+    procedure btnRankingClosedClick(Sender: TObject);
+    procedure btnResetClick(Sender: TObject);
+    procedure lblWinnerClick(Sender: TObject);
+    procedure reset();
+    procedure endOfGame();
+    procedure btnPos11Click(Sender: TObject);
+    procedure btnPos12Click(Sender: TObject);
+    procedure btnPos13Click(Sender: TObject);
+    procedure btnPos21Click(Sender: TObject);
+    procedure btnPos22Click(Sender: TObject);
+    procedure btnPos23Click(Sender: TObject);
+    procedure btnPos31Click(Sender: TObject);
+    procedure btnPos32Click(Sender: TObject);
+    procedure btnPos33Click(Sender: TObject);
+    procedure edtTurnChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure lblTitleClick(Sender: TObject);
+    procedure lbtTurnToViewClick(Sender: TObject);
+    procedure Memo1Change(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  main: Tmain;
+
+implementation
+
+var
+   old : boolean=true;
+   i : boolean;
+   e : integer=1;
+   x : integer=0;
+   o : integer=0;
+
+{$R *.lfm}
+
+{ Tmain }
+
+//My procedure
+procedure Tmain.reset();
+begin
+
+  //RANKING
+  btnRankingClosed.Caption:= ' ';
+  btnRankingClosed.Color:= $000775F5;
+  lblRankingView.Caption:= ' ';
+  lblSecondView.Caption:=' ';
+  lblRanking.Caption:= ' ';
+  lblSecond.Caption:=' ';
+
+  //BTN
+  btnPos11.Caption:= ' ';
+  btnPos12.Caption:= ' ';
+  btnPos13.Caption:= ' ';
+  btnPos21.Caption:= ' ';
+  btnPos22.Caption:= ' ';
+  btnPos23.Caption:= ' ';
+  btnPos31.Caption:= ' ';
+  btnPos32.Caption:= ' ';
+  btnPos33.Caption:= ' ';
+  btnPos11.Color:=$001876E1;
+  btnPos12.Color:=$001876E1;
+  btnPos13.Color:=$001876E1;
+  btnPos21.Color:=$001876E1;
+  btnPos22.Color:=$001876E1;
+  btnPos23.Color:=$001876E1;
+  btnPos31.Color:=$001876E1;
+  btnPos32.Color:=$001876E1;
+  btnPos33.Color:=$001876E1;
+
+  lblWinner.Caption:=' ';
+  old := true;
+  e := 1;
+end;
+
+procedure Tmain.btnResetClick(Sender: TObject);
+begin
+  reset();
+end;
+
+procedure Tmain.lblWinnerClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tmain.btnNewGameClick(Sender: TObject);
+begin
+  reset();
+  x := 0;
+  o := 0;
+end;
+
+procedure Tmain.btnRankingClick(Sender: TObject);
+begin
+  btnRankingClosed.Caption:='X';
+  btnRankingClosed.Color:= clRed;
+  if (x > o ) then
+  begin
+     lblRanking.Caption:= ('The Player X won : ');
+     lblRankingView.Caption:= IntToStr(x);
+     lblSecond.Caption:= ('The Player O won : ');
+     lblSecondView.Caption:= IntToStr(o);
+  end else
+  begin
+     lblRanking.Caption:= ('The Player O won : ');
+     lblRankingView.Caption:= IntToStr(o);
+     lblSecond.Caption:= ('The Player X won : ');
+     lblSecondView.Caption:= IntToStr(x);
+  end;
+
+end;
+
+procedure Tmain.btnRankingClosedClick(Sender: TObject);
+begin
+  btnRankingClosed.Caption:= ' ';
+  btnRankingClosed.Color:= $000775F5;
+  lblRankingView.Caption:= ' ';
+  lblSecondView.Caption:=' ';
+  lblRanking.Caption:= ' ';
+  lblSecond.Caption:=' ';
+end;
+
+procedure Tmain.endOfGame();
+begin
+  //TESTE PAIR X
+  e := e + 1;
+  if(e > 5) then
+  begin
+    //LINE
+    if((btnPos11.Caption = 'X') and (btnPos12.Caption = 'X') and (btnPos13.Caption = 'X')) then
+    begin
+         btnPos11.Color:=clGreen;
+         btnPos12.Color:=clGreen;
+         btnPos13.Color:=clGreen;
+         lblWinner.Caption:='Winner X';
+         old := false;
+         x := x + 1;
+    end;
+    if((btnPos21.Caption = 'X') and (btnPos22.Caption = 'X') and (btnPos23.Caption = 'X')) then
+    begin
+         btnPos21.Color:=clGreen;
+         btnPos22.Color:=clGreen;
+         btnPos23.Color:=clGreen;
+         lblWinner.Caption:='Winner X';
+         old := false;
+         x := x + 1;
+    end;
+
+    if((btnPos31.Caption = 'X') and (btnPos32.Caption = 'X') and (btnPos33.Caption = 'X')) then
+    begin
+         btnPos31.Color:=clGreen;
+         btnPos32.Color:=clGreen;
+         btnPos33.Color:=clGreen;
+         lblWinner.Caption:='Winner X';
+         old := false;
+         x := x + 1;
+    end;
+
+    //COLUNM
+    if((btnPos11.Caption = 'X') and (btnPos21.Caption = 'X') and (btnPos31.Caption = 'X')) then
+    begin
+         btnPos11.Color:=clGreen;
+         btnPos21.Color:=clGreen;
+         btnPos31.Color:=clGreen;
+         lblWinner.Caption:='Winner X';
+         old := false;
+         x := x + 1;
+    end;
+
+    if((btnPos12.Caption = 'X') and (btnPos22.Caption = 'X') and (btnPos32.Caption = 'X')) then
+    begin
+         btnPos12.Color:=clGreen;
+         btnPos22.Color:=clGreen;
+         btnPos32.Color:=clGreen;
+         lblWinner.Caption:='Winner X';
+         old := false;
+         x := x + 1;
+    end;
+
+    if((btnPos13.Caption = 'X') and (btnPos23.Caption = 'X') and (btnPos33.Caption = 'X')) then
+    begin
+         btnPos13.Color:=clGreen;
+         btnPos23.Color:=clGreen;
+         btnPos33.Color:=clGreen;
+         lblWinner.Caption:='Winner X';
+         old := false;
+         x := x + 1;
+    end;
+
+    //DIAGONAL
+    if((btnPos11.Caption = 'X') and (btnPos22.Caption = 'X') and (btnPos33.Caption = 'X')) then
+    begin
+         btnPos11.Color:=clGreen;
+         btnPos22.Color:=clGreen;
+         btnPos33.Color:=clGreen;
+         lblWinner.Caption:='Winner X';
+         old := false;
+         x := x + 1;
+    end;
+
+    if((btnPos13.Caption = 'X') and (btnPos22.Caption = 'X') and (btnPos31.Caption = 'X')) then
+    begin
+         btnPos13.Color:=clGreen;
+         btnPos22.Color:=clGreen;
+         btnPos31.Color:=clGreen;
+         lblWinner.Caption:='Winner X';
+         old := false;
+         x := x + 1;
+    end;
+
+    //TESTE PAIR O
+    //LINE
+    if((btnPos11.Caption = 'O') and (btnPos12.Caption = 'O') and (btnPos13.Caption = 'O')) then
+    begin
+         btnPos11.Color:=clGreen;
+         btnPos12.Color:=clGreen;
+         btnPos13.Color:=clGreen;
+         lblWinner.Caption:='Winner O';
+         old := false;
+         o := o + 1;
+    end;
+
+    if((btnPos21.Caption = 'O') and (btnPos22.Caption = 'O') and (btnPos23.Caption = 'O')) then
+    begin
+         btnPos21.Color:=clGreen;
+         btnPos22.Color:=clGreen;
+         btnPos23.Color:=clGreen;
+         lblWinner.Caption:='Winner O';
+         old := false;
+         o := o + 1;
+    end;
+
+    if((btnPos31.Caption = 'O') and (btnPos32.Caption = 'O') and (btnPos33.Caption = 'O')) then
+    begin
+         btnPos31.Color:=clGreen;
+         btnPos32.Color:=clGreen;
+         btnPos33.Color:=clGreen;
+         lblWinner.Caption:='Winner O';
+         old := false;
+         o := o + 1;
+    end;
+
+    //COLUNM
+    if((btnPos11.Caption = 'O') and (btnPos21.Caption = 'O') and (btnPos31.Caption = 'O')) then
+    begin
+         btnPos11.Color:=clGreen;
+         btnPos21.Color:=clGreen;
+         btnPos31.Color:=clGreen;
+         lblWinner.Caption:='Winner O';
+         old := false;
+         o := o + 1;
+    end;
+
+    if((btnPos12.Caption = 'O') and (btnPos22.Caption = 'O') and (btnPos32.Caption = 'O')) then
+    begin
+         btnPos12.Color:=clGreen;
+         btnPos22.Color:=clGreen;
+         btnPos32.Color:=clGreen;
+         lblWinner.Caption:='Winner O';
+         old := false;
+         o := o + 1;
+    end;
+
+    if((btnPos13.Caption = 'O') and (btnPos23.Caption = 'O') and (btnPos33.Caption = 'O')) then
+    begin
+         btnPos13.Color:=clGreen;
+         btnPos23.Color:=clGreen;
+         btnPos33.Color:=clGreen;
+         lblWinner.Caption:='Winner O';
+         old := false;
+         o := o + 1;
+    end;
+
+    //DIAGONAL
+    if((btnPos11.Caption = 'O') and (btnPos22.Caption = 'O') and (btnPos33.Caption = 'O')) then
+    begin
+         btnPos11.Color:=clGreen;
+         btnPos22.Color:=clGreen;
+         btnPos33.Color:=clGreen;
+         lblWinner.Caption:='Winner O';
+         old := false;
+         o := o + 1;
+    end;
+
+    if((btnPos13.Caption = 'O') and (btnPos22.Caption = 'O') and (btnPos31.Caption = 'O')) then
+    begin
+         btnPos13.Color:=clGreen;
+         btnPos22.Color:=clGreen;
+         btnPos31.Color:=clGreen;
+         lblWinner.Caption:='Winner O';
+         old := false;
+         o := o + 1;
+    end;
+
+    if((old) and (e = 10)) then
+    begin
+      lblWinner.Caption:='      Old';
+      btnPos11.Color:=clRed;
+      btnPos12.Color:=clRed;
+      btnPos13.Color:=clRed;
+      btnPos21.Color:=clRed;
+      btnPos22.Color:=clRed;
+      btnPos23.Color:=clRed;
+      btnPos31.Color:=clRed;
+      btnPos32.Color:=clRed;
+      btnPos33.Color:=clRed;
+    end;
+  end;
+end;
+
+//Procedure of Lazarus
+procedure Tmain.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure Tmain.btnPos11Click(Sender: TObject);
+begin
+  if old then
+  begin
+    if not(( btnPos11.Caption = 'O') or (btnPos11.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos11.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos11.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.btnPos12Click(Sender: TObject);
+begin
+  if old then
+  begin
+    if not(( btnPos12.Caption = 'O') or (btnPos12.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos12.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos12.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.btnPos13Click(Sender: TObject);
+begin
+  if old then
+  begin
+    if not(( btnPos13.Caption = 'O') or (btnPos13.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos13.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos13.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.btnPos21Click(Sender: TObject);
+begin
+  if old then
+  begin
+    if not(( btnPos21.Caption = 'O') or (btnPos21.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos21.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos21.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.btnPos22Click(Sender: TObject);
+begin
+  if old then
+  begin
+    if not(( btnPos22.Caption = 'O') or (btnPos22.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos22.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos22.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.btnPos23Click(Sender: TObject);
+begin
+  if old then
+  begin
+    if not(( btnPos23.Caption = 'O') or (btnPos23.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos23.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos23.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.btnPos31Click(Sender: TObject);
+begin
+  if old then
+  begin
+    if not(( btnPos31.Caption = 'O') or (btnPos31.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos31.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos31.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.btnPos32Click(Sender: TObject);
+begin
+  if old then
+    begin
+    if not(( btnPos32.Caption = 'O') or (btnPos32.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos32.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos32.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.btnPos33Click(Sender: TObject);
+begin
+  if old then
+  begin
+    if not(( btnPos33.Caption = 'O') or (btnPos33.Caption = 'X')) then
+    begin
+      if (i) then
+      begin
+        btnPos33.Caption:= 'O';
+        lbtTurnToView.Caption:='X';
+        i := false;
+      end else
+      begin
+        btnPos33.Caption:= 'X';
+        lbtTurnToView.Caption:='O';
+        i := true;
+      end;
+      endOfGame();
+    end;
+  end;
+end;
+
+procedure Tmain.edtTurnChange(Sender: TObject);
+begin
+
+end;
+
+procedure Tmain.lblTitleClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tmain.lbtTurnToViewClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tmain.Memo1Change(Sender: TObject);
+begin
+
+end;
+
+end.
+

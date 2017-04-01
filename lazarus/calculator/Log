@@ -1,0 +1,22 @@
+//Corrigir Potencia
+
+Problema com a Divisão... em relação a divisão por zero a demais, começar do zero um jeito de melhorar
+
+Aceitar número negativo, logo mexer no botão de subtração
+
+Igual realizar a última operação
+
+/* divisão
+
+if (p2 <> 0) then
+  begin
+    if(p2 = 0) then p1:=p1/1 else
+    begin
+      p1 := p1/p2;
+      p2 := 0;
+      aux := FloatToStr(p1);
+    end;
+  end else aux := 'Division by zero is not defined';
+
+
+*/ 

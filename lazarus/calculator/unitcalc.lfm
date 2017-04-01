@@ -1,0 +1,212 @@
+object frmCalc: TfrmCalc
+  Left = 1009
+  Height = 328
+  Top = 182
+  Width = 334
+  BorderStyle = bsSingle
+  Caption = 'frmCalc'
+  ClientHeight = 328
+  ClientWidth = 334
+  Color = clScrollBar
+  LCLVersion = '1.6.0.4'
+  object btn0: TButton
+    Left = 32
+    Height = 33
+    Top = 280
+    Width = 48
+    Caption = '0'
+    OnClick = btn1Click
+    TabOrder = 0
+  end
+  object btnComma: TButton
+    Left = 88
+    Height = 33
+    Top = 280
+    Width = 48
+    Caption = '.'
+    OnClick = btnCommaClick
+    TabOrder = 1
+  end
+  object btnEqual: TButton
+    Left = 144
+    Height = 33
+    Top = 280
+    Width = 48
+    Caption = '='
+    OnClick = btnEqualClick
+    TabOrder = 2
+  end
+  object btnSum: TButton
+    Left = 200
+    Height = 33
+    Top = 280
+    Width = 48
+    Caption = '+'
+    OnClick = btnSumClick
+    TabOrder = 3
+  end
+  object btn1: TButton
+    Left = 32
+    Height = 33
+    Top = 240
+    Width = 48
+    Caption = '1'
+    OnClick = btn1Click
+    TabOrder = 4
+  end
+  object btn2: TButton
+    Left = 88
+    Height = 33
+    Top = 240
+    Width = 48
+    Caption = '2'
+    OnClick = btn1Click
+    TabOrder = 5
+  end
+  object btn3: TButton
+    Left = 144
+    Height = 33
+    Top = 240
+    Width = 48
+    Caption = '3'
+    OnClick = btn1Click
+    TabOrder = 6
+  end
+  object btnSubtraction: TButton
+    Left = 200
+    Height = 33
+    Top = 240
+    Width = 48
+    Caption = '-'
+    OnClick = btnSubtractionClick
+    TabOrder = 7
+  end
+  object btn4: TButton
+    Left = 32
+    Height = 33
+    Top = 200
+    Width = 48
+    Caption = '4'
+    OnClick = btn1Click
+    TabOrder = 8
+  end
+  object btn5: TButton
+    Left = 88
+    Height = 33
+    Top = 200
+    Width = 48
+    Caption = '5'
+    OnClick = btn1Click
+    TabOrder = 9
+  end
+  object btn6: TButton
+    Left = 144
+    Height = 33
+    Top = 200
+    Width = 48
+    Caption = '6'
+    OnClick = btn1Click
+    TabOrder = 10
+  end
+  object btnMultiplication: TButton
+    Left = 200
+    Height = 33
+    Top = 200
+    Width = 48
+    Caption = '*'
+    OnClick = btnMultiplicationClick
+    TabOrder = 11
+  end
+  object btn7: TButton
+    Left = 32
+    Height = 33
+    Top = 160
+    Width = 48
+    Caption = '7'
+    OnClick = btn1Click
+    TabOrder = 12
+  end
+  object btn8: TButton
+    Left = 88
+    Height = 33
+    Top = 160
+    Width = 48
+    Caption = '8'
+    OnClick = btn1Click
+    TabOrder = 13
+  end
+  object btn9: TButton
+    Left = 144
+    Height = 33
+    Top = 160
+    Width = 48
+    Caption = '9'
+    OnClick = btn1Click
+    TabOrder = 14
+  end
+  object btnDivision: TButton
+    Left = 200
+    Height = 33
+    Top = 160
+    Width = 48
+    Caption = '/'
+    OnClick = btnDivisionClick
+    TabOrder = 15
+  end
+  object btnSqr: TButton
+    Left = 256
+    Height = 33
+    Top = 280
+    Width = 48
+    Caption = '^0.5'
+    OnClick = btnSqrClick
+    TabOrder = 16
+  end
+  object btnPotency: TButton
+    Left = 256
+    Height = 33
+    Top = 240
+    Width = 48
+    Caption = '^2'
+    OnClick = btnPotencyClick
+    TabOrder = 17
+  end
+  object btnMoreOrLess: TButton
+    Left = 256
+    Height = 33
+    Top = 200
+    Width = 48
+    Caption = '+/-'
+    OnClick = btnMoreOrLessClick
+    TabOrder = 18
+  end
+  object btnErase: TButton
+    Left = 256
+    Height = 33
+    Top = 160
+    Width = 48
+    Caption = 'CE'
+    OnClick = btnEraseClick
+    TabOrder = 19
+  end
+  object btnAbout: TButton
+    Left = 256
+    Height = 25
+    Top = 0
+    Width = 72
+    Caption = 'About'
+    OnClick = btnAboutClick
+    TabOrder = 20
+  end
+  object pnlDisplay: TPanel
+    Left = 32
+    Height = 26
+    Top = 120
+    Width = 272
+    Alignment = taRightJustify
+    Caption = '0'
+    Color = clBtnHighlight
+    ParentColor = False
+    TabOrder = 21
+  end
+end

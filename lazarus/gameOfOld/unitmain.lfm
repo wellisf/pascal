@@ -1,0 +1,250 @@
+object main: Tmain
+  Left = 792
+  Height = 485
+  Top = 158
+  Width = 517
+  Caption = 'main'
+  ClientHeight = 485
+  ClientWidth = 517
+  Color = 2127062
+  Font.Height = -13
+  Font.Name = 'Serif'
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object lblTitle: TLabel
+    Left = 200
+    Height = 38
+    Top = 24
+    Width = 135
+    Caption = 'Game of old  '
+    Font.Height = -29
+    Font.Name = 'URW Chancery L'
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblTitleClick
+  end
+  object btnPos11: TButton
+    Left = 104
+    Height = 80
+    Top = 136
+    Width = 80
+    Color = 1472483
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos11Click
+    ParentFont = False
+    TabOrder = 0
+  end
+  object btnPos12: TButton
+    Left = 232
+    Height = 80
+    Top = 136
+    Width = 80
+    Color = 1536728
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos12Click
+    ParentFont = False
+    TabOrder = 1
+  end
+  object btnPos13: TButton
+    Left = 360
+    Height = 80
+    Top = 136
+    Width = 80
+    Color = 1536728
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos13Click
+    ParentFont = False
+    TabOrder = 2
+  end
+  object btnPos21: TButton
+    Left = 104
+    Height = 80
+    Top = 248
+    Width = 80
+    Color = 1473002
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos21Click
+    ParentFont = False
+    TabOrder = 3
+  end
+  object btnPos22: TButton
+    Left = 232
+    Height = 80
+    Top = 248
+    Width = 80
+    Color = 1536987
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos22Click
+    ParentFont = False
+    TabOrder = 4
+  end
+  object btnPos23: TButton
+    Left = 360
+    Height = 80
+    Top = 248
+    Width = 80
+    Color = 1537244
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos23Click
+    ParentFont = False
+    TabOrder = 5
+  end
+  object btnPos31: TButton
+    Left = 104
+    Height = 80
+    Top = 360
+    Width = 80
+    Color = 1603812
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos31Click
+    ParentFont = False
+    TabOrder = 6
+  end
+  object btnPos32: TButton
+    Left = 232
+    Height = 80
+    Top = 360
+    Width = 80
+    Color = 1603554
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos32Click
+    ParentFont = False
+    TabOrder = 7
+  end
+  object btnPos33: TButton
+    Left = 360
+    Height = 80
+    Top = 360
+    Width = 80
+    Color = 1603297
+    Font.Height = -37
+    Font.Name = 'Sans'
+    OnClick = btnPos33Click
+    ParentFont = False
+    TabOrder = 8
+  end
+  object lbtTurn: TLabel
+    Left = 16
+    Height = 24
+    Top = 96
+    Width = 62
+    Caption = 'Turn :'
+    Font.Height = -20
+    Font.Name = 'Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbtTurnToView: TLabel
+    Left = 88
+    Height = 24
+    Top = 96
+    Width = 14
+    Caption = 'X'
+    Font.Height = -20
+    Font.Name = 'Sans'
+    ParentColor = False
+    ParentFont = False
+    OnClick = lbtTurnToViewClick
+  end
+  object btnReset: TButton
+    Left = 0
+    Height = 25
+    Top = 24
+    Width = 80
+    Caption = 'Reset'
+    Color = 488431
+    OnClick = btnResetClick
+    TabOrder = 9
+  end
+  object lblWinner: TLabel
+    Left = 176
+    Height = 1
+    Top = 77
+    Width = 1
+    Font.Height = -37
+    Font.Name = 'MathJax_Math'
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblWinnerClick
+  end
+  object lbldeveloper: TLabel
+    Left = 350
+    Height = 23
+    Top = 456
+    Width = 165
+    Caption = 'Developer by Wellington'
+    Font.Height = -15
+    Font.Name = 'Sawasdee'
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnNewGame: TButton
+    Left = 0
+    Height = 25
+    Top = 0
+    Width = 80
+    Caption = 'New Game'
+    Color = 880608
+    OnClick = btnNewGameClick
+    TabOrder = 10
+  end
+  object btnRanking: TButton
+    Left = 432
+    Height = 25
+    Top = 0
+    Width = 64
+    Caption = 'Ranking'
+    Color = 422639
+    OnClick = btnRankingClick
+    TabOrder = 11
+  end
+  object lblRanking: TLabel
+    Left = 360
+    Height = 1
+    Top = 32
+    Width = 1
+    ParentColor = False
+  end
+  object lblSecond: TLabel
+    Left = 360
+    Height = 1
+    Top = 63
+    Width = 1
+    ParentColor = False
+  end
+  object btnRankingClosed: TButton
+    Left = 493
+    Height = 25
+    Top = 0
+    Width = 24
+    Color = 488949
+    Font.Height = -15
+    Font.Name = 'Sans'
+    OnClick = btnRankingClosedClick
+    ParentFont = False
+    TabOrder = 12
+  end
+  object lblRankingView: TLabel
+    Left = 496
+    Height = 1
+    Top = 34
+    Width = 1
+    ParentColor = False
+  end
+  object lblSecondView: TLabel
+    Left = 496
+    Height = 1
+    Top = 63
+    Width = 1
+    ParentColor = False
+  end
+end
